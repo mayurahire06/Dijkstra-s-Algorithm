@@ -1,0 +1,131 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3d9f4);
+    color: #2c3e50;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideIn 1s ease;
+}
+
+header {
+    background-color: #3498db;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+.nav-link {
+    margin-top: 10px;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    color: #3498db;
+    border-radius: 7px;
+    padding: 5px 17px;
+    background-color: white;
+    /* transition: background-color 0.3s ease, transform 0.3s ease; */
+}
+
+.nav-link:hover {
+    color: #1abc9c;
+    /* transform: translateY(-5px); */
+    /* background-color: #b1d1f0; */
+}
+
+/* .nav-link:hover {
+} */
+
+.intro {
+    margin: 30px auto;
+    text-align: center;
+    max-width: 800px;
+    font-size: 1.2rem;
+    color: #34495e;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.theory-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+   
+}
+
+.code-section{
+    height: 700px;
+    overflow: auto;
+}
+
+.theory-section,
+.code-section,
+.example-section {
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    box-shadow: 4px 11px 8px rgba(0, 0, 0, 0.1);
+}
+
+.theory-section h2,
+.code-section h2,
+.example-section h2 {
+    font-size: 1.8rem;
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+pre {
+    /* background-color: #e5ebf3; */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #3498db;
+    color: white;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.footer a{
+    margin: 2px 5px;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+

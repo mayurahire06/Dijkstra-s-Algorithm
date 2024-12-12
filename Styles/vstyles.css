@@ -1,0 +1,247 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3d9f4);
+    color: #2c3e50;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header Section */
+header {
+    background-color: #3498db;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.4rem;
+}
+
+.nav-links {
+    margin-top: 8px;
+}
+
+.nav-link {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    color: #3498db;
+    border-radius: 7px;
+    padding: 5px 17px;
+    background-color: white;
+}
+
+.nav-link:hover {
+    color: #1abc9c;
+}
+
+/* Main Layout */
+.layout {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    /* height: auto;  */
+    max-height: 650px; 
+}
+
+/* Control Section Styling */
+.control-section {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header inside each control section */
+.control-section h2 {
+    color: #2980b9;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+/* Align Inputs and Labels for "Add Nodes" */
+#addNodesForm, 
+#addEdgeForm {
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    align-items: flex-start;
+}
+
+#addNodesForm label,
+#addEdgeForm label {
+    width: 30%; 
+    text-align: left;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+#addNodesForm input,
+#addNodesForm select,
+#addEdgeForm input,
+#addEdgeForm select {
+    flex: 2; /* Inputs and selects take up the remaining space */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Adjust select width for better visibility */
+#addNodesForm select,
+#addEdgeForm select {
+    flex: 3; /* Increase the width of the select boxes */
+    width: 100%; /* Ensures the select boxes take up full available width */
+}
+
+/* Align Button in the Forms */
+#addNodesForm button,
+#addEdgeForm button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 0;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#addNodesForm button:hover,
+#addEdgeForm button:hover {
+    background-color: #1abc9c;
+    transform: translateY(-2px);
+}
+
+#addNodesForm button:active,
+#addEdgeForm button:active {
+    transform: translateY(2px);
+}
+
+/* Styling for remaining inputs and buttons */
+.control-section input,
+.control-section select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #1abc9c;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+
+/* Graph Panel */
+.graph-container {
+    flex: 1;
+    width: 100%;
+    height: 650px;
+    background-color: white;
+    border-radius: 10px;
+    /* border: 2px solid #3498db; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Results Table */
+.results-container {
+    background-color: white;
+    padding: 20px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 0.7px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.results-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #3498db;
+}
+
+#resultsTable {
+    width: 1160px;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#resultsTable th, #resultsTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#resultsTable th {
+    background-color: #3498db;
+    color: white;
+}
+
+#resultsTable tr:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+#resultsTable tr:hover {
+    background-color: #ddd;
+}
