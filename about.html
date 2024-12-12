@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory of Dijkstra's Algorithm</title>
+    <link rel="stylesheet" href=".\Styles\about.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Dijkstra's Algorithm</h1>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="visualize.html" class="nav-link">Visualization</a>
+        </nav>
+    </header>
+
+    <!-- <section class="intro">
+        <p>Dijkstra's Algorithm is a foundational graph search algorithm used to compute the shortest path between nodes
+            in a graph. Below, you'll explore its theory, a sample implementation, and a step-by-step example.</p>
+    </section> -->
+
+    <section class="theory-container">
+        <!-- Theory Content -->
+        <div class="theory-section">
+            <h2>What is Dijkstra's Algorithm?</h2>
+            <p><strong>Definition:</strong> A greedy algorithm that finds the shortest path from a source node to all
+                other nodes in a weighted graph.</p>
+            <p><strong>Time Complexity:</strong> O(V²)
+            </p>
+            <p><strong>Applications:</strong> Used in GPS navigation, network routing, and many other areas requiring
+                shortest-path calculations.</p>
+        </div>
+
+        <!-- Code Section -->
+        <div class="code-section">
+            <h2>Algorithm</h2>
+            <pre><code>
+        function runDijkstraCoreLogic(startId) {
+            // Initialize distances and previous pointers
+            nodes.forEach(node => {
+                node.distance = node.id === startId ? 0 : Infinity;
+                node.previous = null;
+                node.visited = false;
+            });
+        
+            while (true) {
+                // Find the unvisited node with the smallest distance
+                let currentNode = null;
+                let minDistance = Infinity;
+        
+                nodes.forEach(node => {
+                    if (!node.visited && node.distance < minDistance) {
+                        minDistance = node.distance;
+                        currentNode = node;
+                    }
+                });
+        
+                if (!currentNode) break;
+                currentNode.visited = true;
+        
+                // Update distances to neighbors
+                const neighbors = edges.filter(edge => edge.from === currentNode.id || edge.to === currentNode.id);
+                neighbors.forEach(edge => {
+                    const neighborId = edge.from === currentNode.id ? edge.to : edge.from;
+                    const neighbor = nodes.find(n => n.id === neighborId);
+        
+                    if (neighbor.visited) continue;
+        
+                    const newDistance = currentNode.distance + edge.weight;
+                    if (newDistance < neighbor.distance) {
+                        neighbor.distance = newDistance;
+                        neighbor.previous = currentNode.id;
+                    }
+                });
+            }
+        }
+        
+        function getShortestPathEdges() {
+            const pathEdges = [];
+            nodes.forEach(node => {
+                if (node.previous) {
+                    // Check if the edge goes from the current node to its previous node
+                    const edge = edges.find(e =>(e.from === node.id && e.to === node.previous) || (e.to === node.id && e.from === node.previous)); 
+                    
+                    if (edge) pathEdges.push(edge);
+                }
+            });
+            return pathEdges;
+        }
+        
+        function constructPath(nodeId) {
+            const path = [];
+            let current = nodeId;
+            while (current) {
+                path.unshift(current);
+                current = nodes.find(n => n.id === current)?.previous;
+            }
+            return path;
+        }
+                    
+            </code></pre>
+        </div>
+
+        <!-- Example Section -->
+        <div class="example-section">
+            <h2>Step-by-Step Example</h2>
+            <p>Graph: A → B (2), A → C (4), B → C (1), B → D (7), C → D (3)</p>
+            <p>1. Start from A: Distance to A = 0.</p>
+            <p>2. Visit B: Distance to B = 2.</p>
+            <p>3. Visit C: Distance to C = 3 (via B).</p>
+            <p>4. Visit D: Distance to D = 6 (via C).</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Developed by Team. <a href="index.html">Back to Home</a></p>
+    </footer>
+    <!-- <script src=".\JS\theory.js"></script> -->
+</body>
+
+</html>
