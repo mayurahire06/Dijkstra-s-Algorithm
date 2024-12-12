@@ -7,11 +7,6 @@ Dijkstra's Algorithm is a popular graph search algorithm used to find the shorte
 - Calculates the shortest path from a single source node to all other nodes.
 - Suitable for weighted graphs with non-negative weights.
 
-## Prerequisites
-Before running the project, ensure you have the following installed:
-- [Git](https://git-scm.com/)
-- [C++ Compiler] or any other programming environment you used.
-
 ## Getting Started
 Follow these steps to set up and run the project:
 
@@ -82,9 +77,6 @@ Node 5: 6
 
 ## Contributing
 Contributions are welcome! If you have suggestions for improvements or new features, feel free to open an issue or submit a pull request.
-
-## License
-This project is licensed under the [MIT License](LICENSE).
 
 ## Author
 [Mayur Ahire](https://github.com/mayurahire06)
