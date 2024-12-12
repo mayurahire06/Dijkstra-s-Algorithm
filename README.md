@@ -23,29 +23,6 @@ The program accepts the following inputs:
 3. Edge list (source node, destination node, and weight).
 4. Source node from which shortest paths are calculated.
 
-## Example
-### Input:
-```
-5 7
-1 2 2
-1 3 4
-2 3 1
-2 4 7
-3 5 3
-4 5 1
-1 4 2
-1
-```
-### Output:
-```
-Shortest distances from node 1:
-Node 1: 0
-Node 2: 2
-Node 3: 3
-Node 4: 2
-Node 5: 6
-```
-
 ## Files
 - `visualize.js`: Main source code for the algorithm.
 - `README.md`: Documentation for the project.
@@ -57,7 +34,7 @@ Node 5: 6
 4. Repeat until all nodes have been processed.
 
 ## Complexity
-- **Time Complexity**: O((V + E) log V), where V is the number of vertices and E is the number of edges.
+- **Time Complexity**: O(V^2), where V is the number of vertices and E is the number of edges.
 - **Space Complexity**: O(V + E) for storing the graph.
 
 ## Applications
