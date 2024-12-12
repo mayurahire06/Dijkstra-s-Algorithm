@@ -34,8 +34,8 @@ The program accepts the following inputs:
 4. Repeat until all nodes have been processed.
 
 ## Complexity
-- **Time Complexity**: O(V^2), where V is the number of vertices and E is the number of edges.
-- **Space Complexity**: O(V + E) for storing the graph.
+- **Time Complexity**: O(V^2)
+- **Space Complexity**: O(V + E), where V is the number of vertices and E is the number of edge for storing the graph.
 
 ## Applications
 - Network routing protocols.
