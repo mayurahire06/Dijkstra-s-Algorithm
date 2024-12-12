@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijkstra's Algorithm Visualization</title>
+    <link rel="stylesheet" href=".\Styles\vstyles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Dijkstra's Algorithm Visualization</h1>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+        </nav>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="control-section">
+                <h2>Add Nodes</h2>
+                <label for="nodeCount">Number of Nodes:</label>
+                <input type="number" id="nodeCount" min="1" />
+                <label for="nodeLabelType">Label Type:</label>
+                <select id="nodeLabelType">
+                    <option value="number">Numbers</option>
+                    <option value="character">Characters</option>
+                </select>
+                <button id="generateNodesBtn">Generate Nodes</button>
+            </div>
+
+            <div class="control-section">
+                <h2>Add Edge</h2>
+                <form id="addEdgeForm">
+                    <label for="fromNode">From:</label>
+                    <select id="fromNode" required></select>
+
+                    <label for="toNode">To:</label>
+                    <select id="toNode" required></select>
+
+                    <label for="edgeWeight">Weight:</label>
+                    <input type="number" id="edgeWeight" min="1" required>
+
+                    <button type="submit">Add Edge</button>
+                </form>
+            </div>
+
+            <div class="control-section">
+                <h2>Start Dijkstra</h2>
+                <label for="startNodeSelect">Start Node:</label>
+                <select id="startNodeSelect" required></select>
+                <button id="runDijkstraBtn">Run Dijkstra</button>
+            </div>
+
+            <div class="control-section">
+                <h2>Reset</h2>
+                <button id="resetBtn">Reset Graph</button>
+            </div>
+        </aside>
+
+        <!-- Graph Panel -->
+        <div class="graph-container">
+            <canvas id="graphCanvas" width="900" height="600"></canvas>
+        </div>
+    </div>
+
+        <!-- Main Content -->
+    <main class="content">
+        <!-- Results Table -->
+        <div class="results-container">
+            <h2>Shortest Distances</h2>
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>Node</th>
+                        <th>Path</th>
+                        <th>Distance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Results will be populated dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+    <script src=".\JS\vscript.js"></script>
+</body>
+</html>
