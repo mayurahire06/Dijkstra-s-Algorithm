@@ -13,18 +13,8 @@ Follow these steps to set up and run the project:
 ### Clone the Repository
 ```bash
 git clone https://github.com/mayurahire06/Dijkstra-s-Algorithm.git
-cd Dijkstra-s-Algorithm
+cd Dijkstras-Algorithm
 ```
-
-### Compile and Run
-1. Compile the program:
-   ```bash
-   g++ dijkstra.cpp -o dijkstra
-   ```
-2. Run the executable:
-   ```bash
-   ./dijkstra
-   ```
 
 ## Input Format
 The program accepts the following inputs:
@@ -57,7 +47,7 @@ Node 5: 6
 ```
 
 ## Files
-- `dijkstra.cpp`: Main source code for the algorithm.
+- `visualize.js`: Main source code for the algorithm.
 - `README.md`: Documentation for the project.
 
 ## Algorithm Explanation
